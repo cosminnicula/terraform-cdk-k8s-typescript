@@ -1,0 +1,5 @@
+apiVersion: v2
+name: api
+description: Helm chart for Wordsmith api
+type: application
+version: 1.0.0

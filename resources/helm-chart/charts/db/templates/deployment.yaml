@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  labels:
+    app: words-db
+spec:
+  selector:
+    matchLabels:
+      app: words-db
+  template:
+    metadata:
+      labels:
+        app: words-db
+    spec:
+      containers:
+      - name: db
+        image: dockersamples/k8s-wordsmith-db
+        ports:
+        - containerPort: 5432
+          name: db

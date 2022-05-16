@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: words
+  labels:
+    app: words-api
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: words-api
+  template:
+    metadata:
+      labels:
+        app: words-api
+    spec:
+      containers:
+      - name: words
+        image: dockersamples/k8s-wordsmith-api
+        ports:
+        - containerPort: 8080
+          name: api

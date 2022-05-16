@@ -1,0 +1,16 @@
+apiVersion: v2
+name: wordsmith
+description: Helm chart for Wordsmith
+type: application
+version: 1.0.0
+
+dependencies:
+  - name: db
+    version: 1.0.0
+    repository: file://charts/db
+  - name: api
+    version: 1.0.0
+    repository: file://charts/api
+  - name: web
+    version: 1.0.0
+    repository: file://charts/web
